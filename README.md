@@ -15,7 +15,7 @@ Subqueries: Use subqueries to perform nested queries that allow for more complex
 Data Transformation: Transform raw election data into meaningful insights by using SQL functions for data manipulation, such as CASE statements for categorizing results.
 
 ## Schema
-'''sql
+```sql
 create table if not exists constituencywise_details
 (s_n int,
 candidate varchar(300),
@@ -25,4 +25,4 @@ postal_votes bigint,
 total_votes bigint,
 percent_of_votes float,
 constituency_id varchar(20));
-'''
+```
