@@ -13,3 +13,16 @@ Filtering and Sorting: Apply SQL WHERE clauses and ORDER BY statements to filter
 Subqueries: Use subqueries to perform nested queries that allow for more complex analysis, such as identifying trends over time or comparing candidate performances.
 
 Data Transformation: Transform raw election data into meaningful insights by using SQL functions for data manipulation, such as CASE statements for categorizing results.
+
+## Schema
+'''sql
+create table if not exists constituencywise_details
+(s_n int,
+candidate varchar(300),
+party varchar(100),
+evm_votes bigint,
+postal_votes bigint,
+total_votes bigint,
+percent_of_votes float,
+constituency_id varchar(20));
+'''
