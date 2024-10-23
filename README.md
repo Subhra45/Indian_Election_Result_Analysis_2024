@@ -16,7 +16,8 @@ Data Transformation: Transform raw election data into meaningful insights by usi
 
 ## Schema
 ```sql
-create table if not exists constituencywise_details
+drop table if exists constituencywise_details
+create table constituencywise_details
 (s_n int,
 candidate varchar(300),
 party varchar(100),
@@ -25,4 +26,46 @@ postal_votes bigint,
 total_votes bigint,
 percent_of_votes float,
 constituency_id varchar(20));
+```
+
+```sql
+drop table if exists constituencywise_results
+create table constituencywise_results
+(s_no int,
+parliament_constituency varchar(200),
+constituency_name varchar(100),
+winning_candidate varchar(200),
+total_votes bigint,
+margin bigint,
+constituency_id varchar(20) primary key,
+party_id int);
+```
+
+```sql
+drop table if exists partywise_results
+create table partywise_results
+(party varchar(200),
+won	int,
+party_id int primary key);
+```
+
+```sql
+drop table if exists states
+create table states
+(state_id varchar(10) primary key,
+state varchar(50));
+```
+
+```sql
+drop table if exists statewise_results
+create table statewise_results
+(constituency varchar(50),
+constituency_no int,
+parliament_constituency varchar(100) primary key,
+leading_candidate varchar(200),
+trailing_candidate varchar(200),
+margin bigint,
+status varchar(50),
+state_id varchar(10),
+state varchar(50));
 ```
